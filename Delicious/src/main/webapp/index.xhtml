@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text-html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Template for Admin Delicious" />
+	<meta name="author" content="Guilherme Magalhaes" />
+
+	<!-- CSS Library - Bootstrap -->
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="bootstrap-theme.min.css" />
+
+	<!-- CSS Library - Default -->
+	<h:outputStylesheet library="css" name="main.css" />
+
+	<!-- Javascript Library - Bootstrap -->
+	<h:outputScript library="js" name="vendor/bootstrap.min.js" />
+	<h:outputScript library="js"
+		name="vendor/modernizr-2.6.2-respond-1.1.0.min.js" />
+
+	<!-- Javascript Library - Default -->
+	<h:outputScript library="js" name="main.js" />
+
+	<title>Delicious - Login</title>
+</h:head>
+<h:body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/Delicious/">Delicious</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<h:form class="navbar-form navbar-right" id="formLogin">
+					<div class="form-group">
+						<h:inputText id="username" styleClass="form-control" value="#{adminFace.login}" required="true" requiredMessage="Insira Usuario"/>
+					</div>
+					<div class="form-group">
+						<h:inputSecret id="password" styleClass="form-control" value="#{adminFace.password}" required="true" requiredMessage="Insira a Senha"/>
+					</div>
+					<h:commandButton action="#{adminFace.doLogin}" value="Login" styleClass="btn btn-success"/>
+					
+					<h:messages />
+				</h:form>
+			</div>
+			<!--/.navbar-collapse -->
+		</div>
+	</div>
+</h:body>
+</html>
